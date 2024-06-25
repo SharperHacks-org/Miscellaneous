@@ -1,6 +1,5 @@
 ![SharperHacks logo](SHLLC-Logo.jpg)
-# ShellExec Library for .NET
-## SharperHacks.CoreLibs.Miscellaneous
+# SharperHacks.CoreLibs.Miscellaneous
 
 A collection of miscellaneous orphaned bits of code.
 

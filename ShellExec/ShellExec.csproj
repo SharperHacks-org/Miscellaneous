@@ -4,7 +4,7 @@
     <Authors>Joseph W Donahue</Authors>
     <Copyright>Joseph W Donahue &amp; Sharper Hacks LLC (WA)</Copyright>
     <Company>Sharper Hacks LLC (US-WA)</Company>
-    <Description>Command line parser.</Description>
+    <Description>ShellExec</Description>
   </PropertyGroup>
 
   <PropertyGroup>
