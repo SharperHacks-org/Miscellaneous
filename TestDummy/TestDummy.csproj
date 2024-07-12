@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Joseph W Donahue</Authors>
+    <Copyright>Joseph W Donahue &amp; Sharper Hacks LLC (WA)</Copyright>
+    <Company>Sharper Hacks LLC (US-WA)</Company>
+    <Description>Example CommandLineInterface usage.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Example1</RootNamespace>
+    <Title>$(AssemblyName)</Title>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <Deterministic>true</Deterministic>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PathMap>$(MSBuildThisFileDirectory)={SHLLC/CoreLibs/CommandLineParser/$(MSBuildProjectName)}/</PathMap>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharperHacks.CoreLibs.AppUtilities" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestDummy.appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

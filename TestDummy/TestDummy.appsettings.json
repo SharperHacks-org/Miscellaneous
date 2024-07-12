@@ -1,0 +1,21 @@
+{
+  "TestDummy": {
+    "Logging": {
+      "LogLevel": {
+         "Console": "Verbose",
+         "File": "Verbose",
+         "TraceEnabled": "true"
+      },
+      "LogPath": {
+         "comment_directory": "Environment.SpecialFolder.LocalApplicationData will be used if Directory is null.",
+         "Directory": null,
+
+         "comment_fileprefix": "typeof(Program).Assembly.FullName will be used if FilePrefix is null.",
+         "FilePrefix": null,
+
+         "comment_filepostfix": ".log will be used if FilePostfix is null",
+         "FilePostfix": ".txt"
+      }
+    }
+  }
+}

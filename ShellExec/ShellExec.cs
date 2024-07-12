@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using SharperHacks.CoreLibs.Constraints;
 
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 
 // WIP: This class is incomplete in design and implementation.
@@ -57,12 +58,12 @@ public class ShellExec
     /// <returns></returns>
     public int RunSync()
     {
- //       _log.TraceEntry();
+        TraceStart();
 
         _ = Process.Start();
         Result = Process.StandardOutput.ReadToEnd();
 
-//        _log.TraceExit();
+        TraceStop();
 
         return Process.ExitCode;
     }
@@ -78,7 +79,6 @@ public class ShellExec
     public ShellExec(string cmd, string args, ILogger? logger = null)
     {
         _log = logger;
-//        _log.TraceEntry();
 
         Verify.IsNotNull(cmd);
         Verify.IsNotNull(args);
@@ -104,7 +104,6 @@ public class ShellExec
 
         Result = string.Empty;
 
- //       _log.TraceExit();
     }
 
     /// <summary>
@@ -115,7 +114,6 @@ public class ShellExec
     public ShellExec(ProcessStartInfo psi, ILogger? logger = null)
     {
         _log = logger;
-//        _log.TraceEntry();
 
         Verify.IsNotNull(psi);
 
@@ -129,8 +127,6 @@ public class ShellExec
         };
 
         Result = string.Empty;
-
-//        _log.TraceExit();
     }
 
     #endregion Constructors
@@ -140,6 +136,41 @@ public class ShellExec
     #region private
 
     private readonly ILogger? _log;
+    
+    private Stopwatch _stopwatch = new();
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    private void TraceStart(
+        [CallerMemberName] in string memberName = "",
+        [CallerFilePath] in string fileName = "",
+        [CallerLineNumber] in int lineNumber = 0)
+    {
+        if (_log is null) return;
+
+        var sourceLineInfo = $"{fileName}({lineNumber})";
+        var classMemberInfo = $"{nameof(ShellExec)}.{memberName}";
+        var msgFormat = $"Trace entry: {classMemberInfo}('{{Cmd}} {{Args}}') @ {{sourceLineInfo}}";
+
+        _log.LogTrace(msgFormat, Cmd, Args, sourceLineInfo);
+
+        _stopwatch.Start();
+    }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    private void TraceStop(
+        [CallerMemberName] in string memberName = "",
+        [CallerFilePath] in string fileName = "",
+        [CallerLineNumber] in int lineNumber = 0)
+    {
+        if (_log is null) return;
+
+        var sourceLineInfo = $"{fileName}({lineNumber})";
+        var classMemberInfo = $"{nameof(ShellExec)}.{memberName}";
+        var msgFormat = $"Trace exit: {classMemberInfo}('{{Cmd}} {{Args}}') @ {{sourceLineInfo}}, Elapsed:{{elapsed}}";
+
+        _stopwatch.Stop();
+        _log.LogTrace(msgFormat, Cmd, Args, sourceLineInfo, _stopwatch.Elapsed);
+    }
 
     #endregion private
 }

@@ -1,5 +1,6 @@
 ![SharperHacks logo](SHLLC-Logo.jpg)
-# SharperHacks.CoreLibs.Miscellaneous
+# Miscellaneous DotNet bits.
+## SharperHacks.CoreLibs.Miscellaneous
 
 A collection of miscellaneous orphaned bits of code.
 
@@ -12,8 +13,8 @@ Project URL: https://github.com/SharperHacks-org/Miscellaneous
 Nuget: https://www.nuget.org/packages/SharperHacks.CoreLibs.Miscellaneous
 
 ### Targets
-- net7.0
 - net8.0
+- net9.0
 
 ### Projects
 
