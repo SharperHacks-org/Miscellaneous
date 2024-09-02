@@ -9,7 +9,7 @@
     <FileVersion>0.0.0.0</FileVersion>
     <LangVersion>12</LangVersion>
     <Title>$(AssemblyName)</Title>
-    <Description>Shell execution wrapper.</Description>
+    <Description>System.Action wrappers.</Description>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -22,7 +22,7 @@
     <PackageProjectUrl>https://github.com/SharperHacks-org/$(MSBuildSolutionName)</PackageProjectUrl>
     <PackageReadMeFile>README.md</PackageReadMeFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageTags>Shell;Shell Execution;</PackageTags>
+    <PackageTags>Action;DotNet;</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://ghihub.com/SharperHacks-org/$(MSBuildSolutionName)</RepositoryUrl>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
@@ -58,6 +58,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="4.0.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="0.3.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.IO" Version="5.0.0" />
     <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="0.3.0" />
   </ItemGroup>
 
@@ -85,5 +87,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
 
 </Project>

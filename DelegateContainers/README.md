@@ -1,8 +1,8 @@
 ![SharperHacks logo](SHLLC-Logo.jpg)
 # SharperHacks.CoreLibs.Miscellaneous
-## ShellExec
+## ActionWrappers
 
-A shell execution wrapper w/console capture.
+Some useful bits for working with Action and Action&lt;T&gt;.
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
 
@@ -15,7 +15,4 @@ Nuget: https://www.nuget.org/packages/SharperHacks.CoreLibs.ShellExec
 ### Targets
 - net8.0
 - net9.0
-
-### ShellExec
-Wrapper class for running separate processes, and capturing their output.
 
