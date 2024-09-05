@@ -2,10 +2,9 @@
 
 using Microsoft.Extensions.Logging;
 
-using SharperHacks.CoreLibs.Interfaces;
 using SharperHacks.CoreLibs.LogWrappers;
 
-namespace SharperHacks.CoreLibs.Miscellaneous;
+namespace SharperHacks.CoreLibs.DelegateContainers;
 
 /// <summary>
 /// Base class for AtScopeExit* clases. Encapsulates the IDisposable pattern.

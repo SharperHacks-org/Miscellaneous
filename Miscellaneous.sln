@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShellExecUT", "ShellExecUT\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDummy", "TestDummy\TestDummy.csproj", "{F54F2C1C-0CAA-4315-B37B-4070EB0C049B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtScopeExitUT", "AtScopeExitUT\AtScopeExitUT.csproj", "{1FCD1F2C-CF36-46D6-BEE7-4D969C22F579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateContainersUT", "AtScopeExitUT\DelegateContainersUT.csproj", "{1FCD1F2C-CF36-46D6-BEE7-4D969C22F579}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateContainers", "DelegateContainers\DelegateContainers.csproj", "{11730FED-39F6-420B-8328-4F514B1748B6}"
 EndProject

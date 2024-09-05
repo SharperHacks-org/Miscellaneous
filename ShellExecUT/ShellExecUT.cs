@@ -1,13 +1,14 @@
 ﻿// Copyright and trademark notices at the end of this file.
 
-using Microsoft.Extensions.Logging;
-
 using SharperHacks.CoreLibs.AppUtilities;
 using SharperHacks.CoreLibs.LogWrappers;
+
+using System.Diagnostics.CodeAnalysis;
 
 namespace SharperHacks.CoreLibs.Miscellaneous.ShellExecUT;
 
 [TestClass]
+[ExcludeFromCodeCoverage]
 public class ShellExecUT
 {
     [TestMethod]

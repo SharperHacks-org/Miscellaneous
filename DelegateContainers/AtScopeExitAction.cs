@@ -3,10 +3,9 @@
 using Microsoft.Extensions.Logging;
 
 using SharperHacks.CoreLibs.Constraints;
-using SharperHacks.CoreLibs.DelegateContainers;
 using SharperHacks.CoreLibs.Interfaces;
 
-namespace SharperHacks.CoreLibs.Miscellaneous;
+namespace SharperHacks.CoreLibs.DelegateContainers;
 
 /// <summary>
 /// An IDisposable container of actions to perform on dispose.
@@ -29,8 +28,8 @@ public class AtScopeExitAction : AtScopeExitBase
     /// An ILogger to log events to, if it is not null.
     /// </param>
     public AtScopeExitAction(
-        ActionParamTupleBase[] managedActions,
-        ActionParamTupleBase[] unmanagedActions,
+        ActionParamTuple[] managedActions,
+        ActionParamTuple[] unmanagedActions,
         ILogger? logger = null) : base(logger)
     {
         Verify.IsTrue(managedActions is not null || unmanagedActions is not null);

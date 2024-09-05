@@ -2,14 +2,16 @@
 #if true
 using Microsoft.Extensions.Logging;
 
-using SharperHacks.CoreLibs.DelegateContainers;
 using SharperHacks.CoreLibs.IO;
 using SharperHacks.CoreLibs.LogWrappers;
 
-namespace SharperHacks.CoreLibs.Miscellaneous.AtScopeExitUT;
+using System.Diagnostics.CodeAnalysis;
+
+namespace SharperHacks.CoreLibs.DelegateContainers.AtScopeExitUT;
 
 [TestClass]
-public class AtScopeExitUT
+[ExcludeFromCodeCoverage]
+public class AtScopeExitActionUT
 {
     private Telemetry _telemetry = new(logToConsole: true, shareFile: true);
     private ILogger _logger => _telemetry.Logger;
