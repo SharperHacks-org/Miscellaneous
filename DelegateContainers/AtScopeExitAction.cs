@@ -1,4 +1,5 @@
 ﻿// Copyright and trademark notices at the end of this file.
+
 #if true
 using Microsoft.Extensions.Logging;
 
@@ -64,6 +65,7 @@ public class AtScopeExitAction : AtScopeExitBase
     }
 }
 #endif
+
 // Copyright Joseph W Donahue and Sharper Hacks LLC (US-WA)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using SharperHacks.CoreLibs.Constraints;
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 
@@ -61,6 +62,7 @@ public class ShellExec
         TraceStart();
 
         _ = Process.Start();
+        Process.WaitForExit();
         Result = Process.StandardOutput.ReadToEnd();
 
         TraceStop();
@@ -71,39 +73,21 @@ public class ShellExec
     #region Constructors
 
     /// <summary>
-    /// Simple constructor, uses default ProcessStartInfo settings and adds cmd and args.
+    /// Constructor.
     /// </summary>
     /// <param name="cmd"></param>
     /// <param name="args"></param>
+    /// <param name="workingDir"></param>
+    /// <param name="useShellExecute"></param>
     /// <param name="logger"></param>
-    public ShellExec(string cmd, string args, ILogger? logger = null)
+    public ShellExec(
+        string cmd,
+        string args,
+        string? workingDir = null,
+        bool useShellExecute = false,
+        ILogger? logger = null)
     {
-        _log = logger;
-
-        Verify.IsNotNull(cmd);
-        Verify.IsNotNull(args);
-
-        Cmd = cmd;
-        Args = args;
-
-        var psi = new ProcessStartInfo(Cmd, Args)
-        {
-            RedirectStandardOutput = true, // Capture output.
-            UseShellExecute = false, // No graphical shell.
-            CreateNoWindow = true,
-            FileName = Cmd,
-            Arguments = Args // Execute in background (no window).
-        };
-
-        ProcessStartInfo = psi;
-
-        Process = new Process
-        {
-            StartInfo = ProcessStartInfo
-        };
-
-        Result = string.Empty;
-
+        Initialize(cmd, args, workingDir ?? string.Empty, useShellExecute, logger);
     }
 
     /// <summary>
@@ -129,15 +113,59 @@ public class ShellExec
         Result = string.Empty;
     }
 
-    #endregion Constructors
+#endregion Constructors
 
-    #endregion public
+#endregion public
 
     #region private
 
-    private readonly ILogger? _log;
-    
+    private ILogger? _log;
     private Stopwatch _stopwatch = new();
+
+    [MemberNotNull(
+        nameof(Args),
+        nameof(Cmd),
+        nameof(Process),
+        nameof(ProcessStartInfo),
+        nameof(Result)
+    )]
+    private void Initialize(
+        string cmd,
+        string args,
+        string workingDir,
+        bool useShellExecute,
+        ILogger? logger = null)
+    {
+        _log = logger;
+
+        Verify.IsNotNull(cmd);
+        Verify.IsNotNull(args);
+
+        Cmd = cmd;
+        Args = args;
+
+        var psi = new ProcessStartInfo(Cmd, Args)
+        {
+            Arguments = Args,
+            CreateNoWindow = true, // Execute in background (no window).
+            WorkingDirectory = workingDir,
+            FileName = Cmd,
+            RedirectStandardOutput = true, // Capture output.
+            RedirectStandardError = true,
+            RedirectStandardInput = true, // Allow input.
+            UseShellExecute = useShellExecute, // No graphical shell.
+        };
+
+        ProcessStartInfo = psi;
+
+        Process = new Process
+        {
+            StartInfo = ProcessStartInfo
+        };
+
+        Result = string.Empty;
+    }
+
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
     private void TraceStart(

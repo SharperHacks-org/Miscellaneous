@@ -17,7 +17,7 @@ public class ShellExecUT
         var telemetry = new Telemetry(logToConsole:true);
 //        telemetry.ConsoleLoggingLevelSwitch.MinimumLevel = Serilog.Events.LogEventLevel.Information;
 
-        var appToRun = new ShellExec("TestDummy.exe", string.Empty, telemetry.Logger);
+        var appToRun = new ShellExec("TestDummy.exe", string.Empty, logger: telemetry.Logger);
 
         var result = appToRun.RunSync();
 
