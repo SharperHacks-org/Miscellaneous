@@ -62,8 +62,8 @@ public class ShellExec
         TraceStart();
 
         _ = Process.Start();
-        Process.WaitForExit();
         Result = Process.StandardOutput.ReadToEnd();
+        Process.WaitForExit();
 
         TraceStop();
 
