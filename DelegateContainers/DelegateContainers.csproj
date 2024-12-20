@@ -57,10 +57,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="4.0.1" />
-    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="0.3.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.IO" Version="5.0.1" />
-    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="0.4.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="4.0.2" />
+    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="0.4.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.IO" Version="5.0.2" />
+    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="0.6.0" />
   </ItemGroup>
 
   <ItemGroup>

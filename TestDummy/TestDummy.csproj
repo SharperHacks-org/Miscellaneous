@@ -46,7 +46,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharperHacks.CoreLibs.AppUtilities" Version="5.2.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.AppUtilities" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
