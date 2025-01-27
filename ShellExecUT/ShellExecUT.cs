@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 using SharperHacks.CoreLibs.AppUtilities;
 using SharperHacks.CoreLibs.LogWrappers;
@@ -22,12 +22,30 @@ public class ShellExecUT
         var result = appToRun.RunSync();
 
         Assert.AreEqual(0, result);
-        Assert.IsTrue(appToRun.Result.Contains("TestDummy"));
+        Assert.IsTrue(appToRun.StdOutput.Contains("TestDummy"));
 
         Console.WriteLine($"Log file: {telemetry.LogPathFileName}");
         Console.WriteLine($"Product name: {AppConfig.ProductName}");
 
-        Console.WriteLine(appToRun.Result);
+        Console.WriteLine(appToRun.StdOutput);
+    }
+
+    [TestMethod]
+    public void WithReturnCodeAndErrorOutput()
+    {
+        var errMsg = "Standard error output.";
+        var expectedCode = 42;
+
+        var appToRun = new ShellExec("TestDummy.exe", $"-es:\"{errMsg}\" -rc:{expectedCode}");
+
+        var result = appToRun.RunSync();
+
+        Console.WriteLine($"stdout: {appToRun.StdOutput}");
+        Console.WriteLine($"stderr: {appToRun.StdError}");
+
+        Assert.AreEqual(42, result);
+        Assert.IsTrue(appToRun.StdOutput.Contains("TestDummy"));
+        Assert.IsTrue(appToRun.StdError.Contains(errMsg));
     }
 }
 

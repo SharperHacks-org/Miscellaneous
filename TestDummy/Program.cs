@@ -1,7 +1,41 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
+using SharperHacks.CoreLibs.CommandLineInterface;
+
+var optService = new OptionServices();
+
+var codeToReturnOptionDescriptor = new OptionDescriptor(
+    name: "ReturnCode",
+    optionType: typeof(int),
+    isRequired: false,
+    aliases: ["rc", "RC"],
+    shortDescription: "Status code to resturn.");
+
+var codeToReturn = new Option<int>(
+    optService,
+    codeToReturnOptionDescriptor,
+    0);
+
+var errorSpewOptionDescriptor = new OptionDescriptor(
+    name: "ErrorSpew",
+    optionType: typeof(string),
+    isRequired: false,
+    aliases: ["es", "stderr"],
+    shortDescription: "Message to display on stderr stream.");
+
+var errorSpew = new Option<string>(
+    optService,
+    errorSpewOptionDescriptor,
+    string.Empty);
+
+_ = optService.ParseArgs();
+
+Console.Error.WriteLine(errorSpew);
+Console.Error.Flush();
 Console.WriteLine($"Hello, this is {AppConfig.ProductName}!");
+Console.Out.Flush();
 
+return codeToReturn;
 // Copyright Joseph W Donahue and Sharper Hacks LLC (US-WA)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");

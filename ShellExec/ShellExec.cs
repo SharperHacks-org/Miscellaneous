@@ -49,9 +49,14 @@ public class ShellExec
     public Process Process { get; set; }
 
     /// <summary>
-    /// The captured output from the last command execution.
+    /// The captured  stdout from the last command execution.
     /// </summary>
-    public string Result { get; private set; }
+    public string StdOutput { get; private set; }
+
+    /// <summary>
+    /// The captured stderr from the last command execution.
+    /// </summary>
+    public string StdError { get; private set; }
 
     /// <summary>
     /// Run Cmd with Args, synchronously.
@@ -62,7 +67,8 @@ public class ShellExec
         TraceStart();
 
         _ = Process.Start();
-        Result = Process.StandardOutput.ReadToEnd();
+        StdOutput = Process.StandardOutput.ReadToEnd();
+        StdError = Process.StandardError.ReadToEnd();
         Process.WaitForExit();
 
         TraceStop();
@@ -110,12 +116,13 @@ public class ShellExec
             StartInfo = ProcessStartInfo
         };
 
-        Result = string.Empty;
+        StdOutput = string.Empty;
+        StdError = string.Empty;
     }
 
-#endregion Constructors
+    #endregion Constructors
 
-#endregion public
+    #endregion public
 
     #region private
 
@@ -127,7 +134,8 @@ public class ShellExec
         nameof(Cmd),
         nameof(Process),
         nameof(ProcessStartInfo),
-        nameof(Result)
+        nameof(StdOutput),
+        nameof(StdError)
     )]
     private void Initialize(
         string cmd,
@@ -163,7 +171,8 @@ public class ShellExec
             StartInfo = ProcessStartInfo
         };
 
-        Result = string.Empty;
+        StdOutput = string.Empty;
+        StdError = string.Empty;
     }
 
 
