@@ -12,11 +12,17 @@ Project URL: https://github.com/SharperHacks-org/Miscellaneous
 
 Nuget: https://www.nuget.org/packages/SharperHacks.CoreLibs.Miscellaneous
 
+### Deprecated
+As per [issue #1 (Split these projects into separate repos and remove Miscellaneous.)](https://github.com/SharperHacks-org/Miscellaneous/issues/1), this repo will soon be removed.
+
 ### Targets
 - net8.0
 - net9.0
 
 ### Projects
+
+#### DelegateContainers
+Some useful bits for working with delegate types Action and Func.
 
 #### ShellExec
 Wrapper class for running separate processes, and capturing their output.
