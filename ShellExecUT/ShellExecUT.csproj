@@ -14,10 +14,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.8.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.8.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.8.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
     <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="0.4.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="0.6.1" />
+    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="0.6.2" />
   </ItemGroup>
 
   <ItemGroup>

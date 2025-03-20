@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="build.cmd" />
+    <File Path="checkinTest.cmd" />
+    <File Path="CopyrightChecks.cmd" />
+    <File Path="Directory.Build.Props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="DelegateContainers/DelegateContainers.csproj" />
+  <Project Path="DelegateContainersUT/DelegateContainersUT.csproj" />
+  <Project Path="ShellExec/ShellExec.csproj" />
+  <Project Path="ShellExecUT/ShellExecUT.csproj" />
+  <Project Path="TestDummy/TestDummy.csproj" />
+</Solution>
