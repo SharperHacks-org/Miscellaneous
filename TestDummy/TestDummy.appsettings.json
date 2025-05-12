@@ -2,8 +2,8 @@
   "TestDummy": {
     "Logging": {
       "LogLevel": {
-         "Console": "Verbose",
-         "File": "Verbose",
+         "Console": "Trace",
+         "File": "Trace",
          "TraceEnabled": "true"
       },
       "LogPath": {
