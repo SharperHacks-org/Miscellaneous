@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 #if true
 using Microsoft.Extensions.Logging;
 
@@ -40,9 +40,9 @@ public class AtScopeExitActionUT
                     new ActionParamTuple<string>(Console.WriteLine, action4Str),
                 }))
             {
-                Assert.AreEqual(captured.CapturedOutput, string.Empty);
+                Assert.AreEqual(captured.StdOut, string.Empty);
             }
-            output = captured.CapturedOutput;
+            output = captured.StdOut;
         }
 
         Console.WriteLine(output);

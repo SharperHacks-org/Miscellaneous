@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 using SharperHacks.CoreLibs.IO;
 
@@ -39,7 +39,7 @@ public class FuncRunnerUT
         using (var captured = new CaptureConsoleOutput())
         {
             _runner.Run();
-            output = captured.CapturedOutput;
+            output = captured.StdOut;
         }
 
         Assert.AreEqual(expected, output);

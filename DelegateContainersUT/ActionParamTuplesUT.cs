@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 using SharperHacks.CoreLibs.IO;
 
@@ -101,7 +101,7 @@ public class ActionParamTuplesUT
         using (var captured = new CaptureConsoleOutput())
         {
             _tuples[idx].Invoke();
-            output = captured.CapturedOutput;
+            output = captured.StdOut;
         }
 
         Console.WriteLine(output);
