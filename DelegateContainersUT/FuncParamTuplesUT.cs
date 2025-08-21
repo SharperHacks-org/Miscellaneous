@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 using System.Diagnostics.CodeAnalysis;
 
@@ -82,7 +82,7 @@ public class FuncParamTuplesUT
             arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16),
     };
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(0, arg1)]
     [DataRow(1, arg1 + arg2)]
     [DataRow(2, arg1 + arg2 + arg3)]

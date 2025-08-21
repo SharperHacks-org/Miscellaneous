@@ -77,7 +77,7 @@ public class ActionParamTuplesUT
             arg14, arg15, arg16),
     };
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(0, arg1, arg1)]
     [DataRow(1, arg1, arg2)]
     [DataRow(2, arg1, arg3)]
