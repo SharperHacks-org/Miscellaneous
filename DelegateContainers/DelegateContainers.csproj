@@ -60,7 +60,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.8" />
     <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.0.1" />
     <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="1.0.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.IO" Version="7.0.2" />
+    <PackageReference Include="SharperHacks.CoreLibs.IO" Version="7.0.3" />
     <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="1.0.1" />
   </ItemGroup>
 
