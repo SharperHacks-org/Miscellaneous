@@ -46,8 +46,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharperHacks.CoreLibs.AppUtilities" Version="10.0.4" />
-    <PackageReference Include="SharperHacks.CoreLibs.CommandLineInterface" Version="0.16.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.AppUtilities" Version="10.0.5" />
+    <PackageReference Include="SharperHacks.CoreLibs.CommandLineInterface" Version="0.17.0" />
   </ItemGroup>
 
   <ItemGroup>

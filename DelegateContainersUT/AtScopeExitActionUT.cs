@@ -47,10 +47,10 @@ public class AtScopeExitActionUT
 
         Console.WriteLine(output);
 
-        Assert.IsTrue(output.Contains(action1Str));
-        Assert.IsTrue(output.Contains(action2Str));
-        Assert.IsTrue(output.Contains(action3Str));
-        Assert.IsTrue(output.Contains(action4Str));
+        Assert.Contains(action1Str, output);
+        Assert.Contains(action2Str, output);
+        Assert.Contains(action3Str, output);
+        Assert.Contains(action4Str, output);
     }
 }
 #endif

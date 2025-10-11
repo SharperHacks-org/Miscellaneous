@@ -105,8 +105,8 @@ public class ActionParamTuplesUT
         }
 
         Console.WriteLine(output);
-        Assert.IsTrue(output.StartsWith(startsWith));
-        Assert.IsTrue(output.TrimEnd().EndsWith(endsWith));
+        Assert.StartsWith(startsWith, output);
+        Assert.EndsWith(endsWith, output.TrimEnd());
     }
 }
 

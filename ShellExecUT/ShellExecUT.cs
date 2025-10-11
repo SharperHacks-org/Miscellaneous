@@ -22,7 +22,7 @@ public class ShellExecUT
         var result = appToRun.RunSync();
 
         Assert.AreEqual(0, result);
-        Assert.IsTrue(appToRun.StdOutput.Contains("TestDummy"));
+        Assert.Contains("TestDummy", appToRun.StdOutput);
 
         Console.WriteLine($"Log file: {telemetry.LogPathFileName}");
         Console.WriteLine($"Product name: {AppConfig.ProductName}");
@@ -44,8 +44,8 @@ public class ShellExecUT
         Console.WriteLine($"stderr: {appToRun.StdError}");
 
         Assert.AreEqual(42, result);
-        Assert.IsTrue(appToRun.StdOutput.Contains("TestDummy"));
-        Assert.IsTrue(appToRun.StdError.Contains(errMsg));
+        Assert.Contains("TestDummy", appToRun.StdOutput);
+        Assert.Contains(errMsg, appToRun.StdError);
     }
 }
 
