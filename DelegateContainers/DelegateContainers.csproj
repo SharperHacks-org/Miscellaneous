@@ -9,6 +9,7 @@
     <FileVersion>0.0.0.0</FileVersion>
     <Title>$(AssemblyName)</Title>
     <Description>System.Action wrappers.</Description>
+    <TargetFrameworks>$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Deterministic)' == 'true' And '$(PathMap)' == ''">
@@ -59,9 +60,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.9" />
     <PackageReference Include="SharperHacks.CoreLibs.Constraints" Version="5.0.2" />
-    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="1.0.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="1.1.0" />
     <PackageReference Include="SharperHacks.CoreLibs.IO" Version="7.0.3" />
-    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="1.2.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>

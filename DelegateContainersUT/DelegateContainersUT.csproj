@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>SharperHacks.CoreLibs.DelegateContainers.UnitTests</AssemblyName>
@@ -15,9 +15,9 @@
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <TargetFrameworks>$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,9 +28,9 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="4.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="4.0.0" />
-    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="1.0.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.Interfaces" Version="1.1.0" />
     <PackageReference Include="SharperHacks.CoreLibs.JsonHelpers" Version="4.0.1" />
-    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="1.2.0" />
+    <PackageReference Include="SharperHacks.CoreLibs.LogWrappers" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -176,7 +176,8 @@ public class ShellExec
     }
 
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    [SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    [SuppressMessage("Performance", "CA1848:Use LoggerMessage delegates", Justification = "Performance gain not required")]
     private void TraceStart(
         [CallerMemberName] in string memberName = "",
         [CallerFilePath] in string fileName = "",
@@ -193,7 +194,8 @@ public class ShellExec
         _stopwatch.Start();
     }
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    [SuppressMessage("Usage", "CA2254:Template should be a static expression", Justification = "It only changes if the code is recompiled.")]
+    [SuppressMessage("Performance", "CA1848:Use LoggerMessage delegates", Justification = "Performance gain not required")]
     private void TraceStop(
         [CallerMemberName] in string memberName = "",
         [CallerFilePath] in string fileName = "",

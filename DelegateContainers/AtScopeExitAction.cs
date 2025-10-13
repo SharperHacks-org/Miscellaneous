@@ -1,4 +1,4 @@
-﻿// Copyright and trademark notices at the end of this file.
+// Copyright and trademark notices at the end of this file.
 
 #if true
 using Microsoft.Extensions.Logging;
@@ -39,11 +39,11 @@ public class AtScopeExitAction : AtScopeExitBase
         if (unmanagedActions is not null) _unmanagedActions = new(unmanagedActions);
     }
 
-    private void RunActions(IEnumerable<IInvoke> tuples)
+    private static void RunActions(IEnumerable<IInvoke> tuples)
     {
         foreach (var tuple in tuples)
         {
-            Logger?.LogTrace("Running: {Action}", tuple.ToString());
+//            Logger?.LogTrace("Running: {Action}", tuple.ToString());
             tuple.Invoke();
         }
     }
